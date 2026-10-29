@@ -207,21 +207,26 @@ public class Midterm_ArenaTournament : MonoBehaviour
         }
         else
         {
+            //int target = 0;
+            //for (int t = 0; t < names.Length; t++)
+            //{
+            //    if (health[t] <= 0 || t == attackerIndex)
+            //    {
+            //        continue;
+            //    }
+            //    else
+            //    {
+            //        target = t;
+            //        if (Random.Range(1, 3) == 1)
+            //        {
+            //            break;
+            //        }
+            //    }
+            //}
             int target = 0;
-            for (int t = 0; t < names.Length; t++)
+            while (health[target] <= 0 || target == attackerIndex)
             {
-                if (health[t] <= 0 || t == attackerIndex)
-                {
-                    continue;
-                }
-                else
-                {
-                    target = t;
-                    if (Random.Range(1, 2) == 1)
-                    {
-                        break;
-                    }
-                }
+                target = Random.Range(0, names.Length);
             }
             return target;
         }
